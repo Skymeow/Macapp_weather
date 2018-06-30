@@ -11,8 +11,10 @@
 		F9C9CB5020E72DA2005AC961 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C9CB4F20E72DA2005AC961 /* WeatherVC.swift */; };
 		F9C9CB5220E72DA2005AC961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C9CB5120E72DA2005AC961 /* Assets.xcassets */; };
 		F9C9CB5520E72DA2005AC961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C9CB5320E72DA2005AC961 /* Main.storyboard */; };
-		F9C9CB6220E81EE7005AC961 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C9CB6120E81EE7005AC961 /* WeatherView.xib */; };
+		F9C9CB6220E81EE7005AC961 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C9CB6120E81EE7005AC961 /* WeatherCell.xib */; };
 		F9C9CB6420E81F2B005AC961 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C9CB6320E81F2B005AC961 /* WeatherCell.swift */; };
+		F9C9CB6620E82EFC005AC961 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C9CB6520E82EFC005AC961 /* Constants.swift */; };
+		F9C9CB6820E83672005AC961 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C9CB6720E83672005AC961 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +25,10 @@
 		F9C9CB5420E72DA2005AC961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9C9CB5620E72DA2005AC961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C9CB5720E72DA2005AC961 /* weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weather.entitlements; sourceTree = "<group>"; };
-		F9C9CB6120E81EE7005AC961 /* WeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		F9C9CB6120E81EE7005AC961 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		F9C9CB6320E81F2B005AC961 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		F9C9CB6520E82EFC005AC961 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F9C9CB6720E83672005AC961 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				F9C9CB5320E72DA2005AC961 /* Main.storyboard */,
 				F9C9CB5620E72DA2005AC961 /* Info.plist */,
 				F9C9CB5720E72DA2005AC961 /* weather.entitlements */,
+				F9C9CB6520E82EFC005AC961 /* Constants.swift */,
+				F9C9CB6920E83678005AC961 /* Service */,
 			);
 			path = weather;
 			sourceTree = "<group>";
@@ -96,9 +102,17 @@
 		F9C9CB6020E81ED4005AC961 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				F9C9CB6120E81EE7005AC961 /* WeatherView.xib */,
+				F9C9CB6120E81EE7005AC961 /* WeatherCell.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		F9C9CB6920E83678005AC961 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F9C9CB6720E83672005AC961 /* WeatherService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9C9CB6220E81EE7005AC961 /* WeatherView.xib in Resources */,
+				F9C9CB6220E81EE7005AC961 /* WeatherCell.xib in Resources */,
 				F9C9CB5220E72DA2005AC961 /* Assets.xcassets in Resources */,
 				F9C9CB5520E72DA2005AC961 /* Main.storyboard in Resources */,
 			);
@@ -173,9 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C9CB6820E83672005AC961 /* WeatherService.swift in Sources */,
 				F9C9CB5020E72DA2005AC961 /* WeatherVC.swift in Sources */,
 				F9C9CB4E20E72DA2005AC961 /* AppDelegate.swift in Sources */,
 				F9C9CB6420E81F2B005AC961 /* WeatherCell.swift in Sources */,
+				F9C9CB6620E82EFC005AC961 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +259,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -309,6 +325,7 @@
 				DEVELOPMENT_TEAM = A3KV3V94JT;
 				INFOPLIST_FILE = weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
